@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylemy.css">
+    
+    <!-- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style3.css"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="script1.js" defer></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script> -->
+    <title>Samsung Galaxy S23 Ultra</title>
+</head>
+
+<body>
+
+    <!-- <header>
+        <h1>Samsung Galaxy S23 Ultra</h1>
+    </header> -->
+
+    <nav>
+        <a href="#main">Home</a>
+        <a href="#features">Features</a>
+        <a href="#specs">Specifications</a>
+        <a href="#buy">Buy Now</a>
+    </nav>
+
+    <main id="main" class="main">
+        <img src="./images/galaxy-s23-ultra-highlights-kv.avif" alt="Banner">
+        <h1>Galaxy S23 Ultra</h1>
+        <h2>Ultra Reborn</h2>
+    </main>
+
+    <section id="features" class="container">
+        <h2 style="font-size: 40px;">Key Features</h2>
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod lacus ut libero convallis, ac fermentum libero consectetur.</p> -->
+
+        <div class="screensize">
+            <img src="./images/galaxy-s23-ultra-highlights-colors-cream-side.avif" alt="Screen Side">
+            <h3>6.7-inch Super AMOLED display</h3>
+        </div>
+
+        <div class="camera">
+            <img src="./images/s23 Banner.jpg" alt="Cameras">
+            <p>The new Galaxy is packed with world's biggest sensor, light-absorbing pixels and video stabilization technology into one Pro-grade Camera</p>
+            <h3>Epically Equipped</h3>
+            <!-- <img src="./images/galaxy-s23-ultra-highlights-spec-camera.avif" alt="Camera Specs" class="cam2"> -->
+        </div>
+
+        <div class="colour">
+            <h2>Colours</h2>
+            <h3>Earth-inspired hues. Crafted with natural dyes</h3>
+            <!-- <div class="wrapper"> -->
+            <div id="content" class="wrapper">
+                <h3 id="textContent">Green</h3>
+                <div class="col">
+                    <button onclick="changeContent1()" id="col1"></button>
+                    <button onclick="changeContent2()" id="col2"></button>
+                    <button onclick="changeContent3()" id="col3"></button>
+                    <button onclick="changeContent4()" id="col4"></button>
+                </div>
+            </div>
+            <img id="image" src="./images/galaxy-s23-ultra-highlights-colors-green-back.avif" alt="Green">
+            <!-- </div> -->
+        </div>
+        <h2>Some other features</h2>
+        <ul>
+            <!-- <li>6.7-inch Super AMOLED display</li> -->
+            <li>Quad-camera system with 108MP main sensor</li>
+            <li>5000mAh battery with fast charging</li>
+            <li>5G connectivity</li>
+            <li>256GB internal storage</li>
+        </ul>
+    </section>
+
+    
+
+    <section id="specs" class="container">
+        <h2>Specifications</h2>
+        <div class="specs">
+            <div>
+                <h3>Display</h3>
+                <p>6.7-inch Super AMOLED</p>
+            </div>
+            <div>
+                <h3>Camera</h3>
+                <p>Quad-camera system, 108MP main sensor</p>
+            </div>
+            <div>
+                <h3>Battery</h3>
+                <p>5000mAh, Fast charging</p>
+            </div>
+            <div>
+                <h3>Connectivity</h3>
+                <p>5G</p>
+            </div>
+            <div>
+                <h3>Storage</h3>
+                <p>256GB internal storage</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="buy" class="container">
+        <h2>Buy Now</h2>
+        <p>Be the first to set the epic standard. Galaxy S23 Ultra</p>
+        <br>
+        <a href="#" id="buyButton" class="button">Buy Now</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Samsung. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const contentData = [
+            { text: "Green", imageUrl: "./images/galaxy-s23-ultra-highlights-colors-green-back.avif" },
+            { text: "Phantom Black", imageUrl: "./images/galaxy-s23-ultra-highlights-colors-phantom-black-back.avif" },
+            { text: "Lavender", imageUrl: "./images/galaxy-s23-ultra-highlights-colors-lavender-back.avif" },
+            { text: "Cream", imageUrl: "./images/galaxy-s23-ultra-highlights-colors-cream-back.avif" }
+        ];
+
+        function changeContent(index) {
+            var textElement = document.getElementById("textContent");
+            var imageElement = document.getElementById("image");
+
+            textElement.textContent = contentData[index].text;
+            imageElement.src = contentData[index].imageUrl;
+        }
+
+        function changeContent1() {
+            changeContent(0);
+        }
+
+        function changeContent2() {
+            changeContent(1);
+        }
+
+        function changeContent3() {
+            changeContent(2);
+        }
+
+        function changeContent4() {
+            changeContent(3);
+        }
+
+
+
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetSection = document.querySelector(this.getAttribute('href'));
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+        let ticking = false;
+        function handleScroll() {
+            if (!ticking) {
+                requestAnimationFrame(update);
+                ticking = true;
+            }
+        }
+        function update() {
+            const screensizeImage = document.querySelector('.screensize img');
+            const cameraImage = document.querySelector('.camera img');
+
+            // Get the bounds of the visible area
+            const bounds = document.documentElement.getBoundingClientRect();
+
+            // Calculate the maximum scroll value
+            const maxScroll = document.body.offsetHeight - window.innerHeight;
+
+            // Calculate the percentage scrolled
+            const scrollPercentage = (window.scrollY / maxScroll) * 100;
+
+            // Move the screensize image to the right on scroll within visible area
+            screensizeImage.style.transform = `translateX(calc(-100% + ${scrollPercentage * 15}px))`;
+
+            // Move the camera image up on scroll within visible area
+            cameraImage.style.transform = `translateY(calc(100% - ${scrollPercentage * 15}px))`;
+
+            // Check if images are out of view, then stop ticking
+            if (scrollPercentage >= 90) {
+                ticking = false;
+            } else {
+                ticking = true;
+                requestAnimationFrame(update);
+            }
+        }
+
+        // Attach the handleScroll function to the scroll event
+        window.addEventListener('scroll', handleScroll);
+
+
+
+        document.getElementById('buyButton').addEventListener('click', function() {
+            alert('Thank you for purchasing Samsung Galaxy S23 Ultra!');
+        });
+    </script>
+
+</body>
+</html>
